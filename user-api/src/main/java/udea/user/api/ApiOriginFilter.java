@@ -1,4 +1,4 @@
-package io.swagger.api;
+package udea.user.api;
 
 import java.io.IOException;
 

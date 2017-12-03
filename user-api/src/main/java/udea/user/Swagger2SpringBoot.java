@@ -1,4 +1,4 @@
-package io.swagger;
+package udea.user;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = { "io.swagger", "io.swagger.api" })
+@ComponentScan(basePackages = { "udea.user", "udea.user.api" })
 public class Swagger2SpringBoot implements CommandLineRunner {
 
     @Override

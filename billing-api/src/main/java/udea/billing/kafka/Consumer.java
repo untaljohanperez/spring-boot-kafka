@@ -8,14 +8,14 @@ import org.springframework.stereotype.Component;
 
 import java.util.concurrent.CountDownLatch;
 
-@Component
+//@Component
 public class Consumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Consumer.class);
 
     private CountDownLatch latch = new CountDownLatch(1);
 
-    @KafkaListener(topics = "${kafka.topic.create-user}")
+    @KafkaListener(topics = "${kafka.topic.billing}")
     public void receive(ConsumerRecord<?, ?> consumerRecord) {
         LOGGER.info("received payload='{}'", consumerRecord.toString());
         latch.countDown();

@@ -1,19 +1,19 @@
 package udea.billing.model;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.springframework.validation.annotation.Validated;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotNull;
+import java.util.Objects;
 
 /**
- * Customer
+ * User
  */
 @Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-12-02T16:02:27.886Z")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-12-02T16:30:58.068Z")
 
-public class Customer   {
+public class User {
   @JsonProperty("id")
   private String id = null;
 
@@ -26,7 +26,7 @@ public class Customer   {
   @JsonProperty("email")
   private String email = null;
 
-  public Customer id(String id) {
+  public User id(String id) {
     this.id = id;
     return this;
   }
@@ -47,7 +47,7 @@ public class Customer   {
     this.id = id;
   }
 
-  public Customer name(String name) {
+  public User name(String name) {
     this.name = name;
     return this;
   }
@@ -68,7 +68,7 @@ public class Customer   {
     this.name = name;
   }
 
-  public Customer address(String address) {
+  public User address(String address) {
     this.address = address;
     return this;
   }
@@ -89,7 +89,7 @@ public class Customer   {
     this.address = address;
   }
 
-  public Customer email(String email) {
+  public User email(String email) {
     this.email = email;
     return this;
   }
@@ -112,18 +112,18 @@ public class Customer   {
 
 
   @Override
-  public boolean equals(java.lang.Object o) {
+  public boolean equals(Object o) {
     if (this == o) {
       return true;
     }
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Customer customer = (Customer) o;
-    return Objects.equals(this.id, customer.id) &&
-        Objects.equals(this.name, customer.name) &&
-        Objects.equals(this.address, customer.address) &&
-        Objects.equals(this.email, customer.email);
+    User user = (User) o;
+    return Objects.equals(this.id, user.id) &&
+        Objects.equals(this.name, user.name) &&
+        Objects.equals(this.address, user.address) &&
+        Objects.equals(this.email, user.email);
   }
 
   @Override
@@ -134,8 +134,8 @@ public class Customer   {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Customer {\n");
-    
+    sb.append("class User {\n");
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
@@ -148,7 +148,7 @@ public class Customer   {
    * Convert the given object to string with each line indented by 4 spaces
    * (except the first line).
    */
-  private String toIndentedString(java.lang.Object o) {
+  private String toIndentedString(Object o) {
     if (o == null) {
       return "null";
     }

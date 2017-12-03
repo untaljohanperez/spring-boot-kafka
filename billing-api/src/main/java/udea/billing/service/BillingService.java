@@ -22,13 +22,13 @@ public class BillingService {
     @Autowired
     ObjectMapper mapper = new ObjectMapper();
 
-    @Value("${kafka.topic.create-user}")
+    @Value("${kafka.topic.billing}")
     private String createUserTopic;
 
     public Bill createBill(Bill bill) {
         try {
             bill.setId(UUID.randomUUID().toString());
-            producer.sendBilling(new KafkaMessage(createUserTopic, mapper.writeValueAsString(bill.getCustomer())));
+            producer.sendBilling(new KafkaMessage(createUserTopic, mapper.writeValueAsString(bill)));
             return bill;
         } catch (Exception e) {
             log.error(e.toString());

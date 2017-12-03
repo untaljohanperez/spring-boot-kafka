@@ -1,11 +1,11 @@
-package io.swagger.api;
+package udea.user.api;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2017-12-02T16:30:58.068Z")
 
-public class NotFoundException extends ApiException {
+public class ApiException extends Exception{
     private int code;
-    public NotFoundException (int code, String msg) {
-        super(code, msg);
+    public ApiException (int code, String msg) {
+        super(msg);
         this.code = code;
     }
 }
