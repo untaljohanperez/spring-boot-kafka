@@ -91,3 +91,4 @@ local.properties
 
 .idea/
 .swagger-codegen/
+*.iml
