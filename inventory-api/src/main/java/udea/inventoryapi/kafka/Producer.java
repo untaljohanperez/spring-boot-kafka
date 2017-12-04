@@ -1,11 +1,11 @@
-package udea.billing.kafka;
+package udea.inventoryapi.kafka;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
-import udea.billing.model.KafkaMessage;
+import udea.inventoryapi.model.KafkaMessage;
 
 @Component
 public class Producer {

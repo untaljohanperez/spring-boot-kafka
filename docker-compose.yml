@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   zookeeper:
     image: zookeeper
@@ -13,3 +13,15 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+#  billing-api:
+#    build: ./billing-api
+#    ports:
+#      - "4000:4000"
+#  user-api:
+#    build: ./user-api
+#    ports:
+#      - "4001:4001"
+#  inventory-api:
+#    build: ./inventory-api
+#    ports:
+#      - "4002:4002"

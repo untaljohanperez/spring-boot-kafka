@@ -28,7 +28,6 @@ repositories {
 
 apply plugin: 'java'
 apply plugin: 'idea'
-apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
@@ -40,4 +39,8 @@ dependencies {
 	compile group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-joda', version: '2.9.2'
 	compile group: 'joda-time', name: 'joda-time', version: '2.9.9'
     compile group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.1.0.RELEASE'
+}
+
+bootRun {
+    main = 'udea.billing.Swagger2SpringBoot'
 }
