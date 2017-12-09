@@ -9,19 +9,27 @@ services:
     ports:
       - "9092:9092"
     environment:
-      KAFKA_ADVERTISED_HOST_NAME: localhost
+      KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#  billing-api:
-#    build: ./billing-api
-#    ports:
-#      - "4000:4000"
-#  user-api:
-#    build: ./user-api
-#    ports:
-#      - "4001:4001"
-#  inventory-api:
-#    build: ./inventory-api
-#    ports:
-#      - "4002:4002"
+  billing-api:
+    build: ./billing-api
+    ports:
+      - "4000:4000"
+  user-api:
+    build: ./user-api
+    ports:
+      - "4001:4001"
+  inventory-api:
+    build: ./inventory-api
+    ports:
+      - "4002:4002"
+  bi-api:
+    build: ./bi-api
+    ports:
+      - "4003:4003"
+  purchasing-api:
+    build: ./purchasing-api
+    ports:
+      - "4004:4004"
