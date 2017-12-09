@@ -8,4 +8,4 @@ This projects shows build a system with microservices using some of the lastest 
 ## Quickstart
 
 1. Install docker
-2. run docker-compose up
+2. run "docker-compose up"
