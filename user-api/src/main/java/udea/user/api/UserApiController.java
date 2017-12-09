@@ -1,5 +1,6 @@
 package udea.user.api;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import udea.user.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import udea.user.service.UserService;
 
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
@@ -26,27 +28,20 @@ public class UserApiController implements UserApi {
 
     private final HttpServletRequest request;
 
+    @Autowired
+    private UserService userService;
+
     @org.springframework.beans.factory.annotation.Autowired
     public UserApiController(ObjectMapper objectMapper, HttpServletRequest request) {
         this.objectMapper = objectMapper;
         this.request = request;
     }
 
-    public ResponseEntity<User> getUser(@ApiParam(value = "",required=true) @PathVariable("id") String id) {
-        String accept = request.getHeader("Accept");
-        if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<User>(objectMapper.readValue("{  \"address\" : \"address\",  \"name\" : \"name\",  \"id\" : \"id\",  \"email\" : \"email\"}", User.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<User>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
-
-        return new ResponseEntity<User>(HttpStatus.NOT_IMPLEMENTED);
+    public ResponseEntity<User> getUser(@ApiParam(value = "", required = true) @PathVariable("id") String id) {
+        return new ResponseEntity<User>(userService.getUser(id), HttpStatus.OK);
     }
 
-    public ResponseEntity<Void> newUser(@ApiParam(value = ""  )  @Valid @RequestBody User billing) {
+    public ResponseEntity<Void> newUser(@ApiParam(value = "") @Valid @RequestBody User billing) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }

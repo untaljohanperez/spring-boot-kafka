@@ -13,6 +13,10 @@ public class UserService {
         createUser(user);
     }
 
+    public User getUser(String id) {
+        return new User().id(id).name("MegaUsuario");
+    }
+
     private void createUser(User user) {
         LOGGER.info("Creating user " + user.toString());
     }

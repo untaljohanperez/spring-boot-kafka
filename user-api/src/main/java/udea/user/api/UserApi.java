@@ -25,7 +25,7 @@ public interface UserApi {
         @ApiResponse(code = 200, message = "valid user", response = User.class),
         @ApiResponse(code = 400, message = "invalid input") })
     @RequestMapping(value = "/user/{id}",
-        produces = { "application/json" }, 
+        produces = { "application/json" },
         consumes = { "application/json" },
         method = RequestMethod.GET)
     ResponseEntity<User> getUser(@ApiParam(value = "",required=true) @PathVariable("id") String id);
